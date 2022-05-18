@@ -1,9 +1,10 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
-const URI = 'http://localhost:8000/cargardocumentacion'
-
+import Archivo from "./Archivos"
+import QuitarArchivo from "./QuitarArchivo"
+import "bootstrap/dist/css/bootstrap.min.css"
+const URI = 'http://localhost:8000/CargarDocumentacion'
 
 const CompMostrarDocumentos = () => {
     const [documentos, setDocumento] = useState([])
@@ -49,10 +50,8 @@ const CompMostrarDocumentos = () => {
                                         <input type="file" id="myfile" name="myfile"></input>
                                     </td>
                                     <td>
-                                        < button className="btn btn-info">Subir</button>
-                                        <button className="btn btn-danger">Eliminar</button>
+                                        <Archivo></Archivo>
                                     </td>
-
                                 </tr>
                             )}
                         </tbody>
@@ -64,7 +63,4 @@ const CompMostrarDocumentos = () => {
         </div>
     )
 }
-
-
-
 export default CompMostrarDocumentos
